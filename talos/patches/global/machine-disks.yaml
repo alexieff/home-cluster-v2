@@ -1,0 +1,5 @@
+machine:
+  disks:
+    - device: /dev/nvme0n1 # The name of the disk to use.
+      partitions:
+        - mountpoint: /var/lib/longhorn # Where to mount the partition.    
