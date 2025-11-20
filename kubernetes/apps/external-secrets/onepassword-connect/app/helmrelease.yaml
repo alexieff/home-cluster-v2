@@ -14,7 +14,7 @@ spec:
   interval: 1h
   values:
     connect:
-      credentials: onepassword-connect-secret
+      credentialsName: onepassword-connect-secret
       credentialsKey: 1password-credentials.json
     operator:
       create: false
