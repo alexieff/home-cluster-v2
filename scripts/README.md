@@ -6,7 +6,7 @@ This directory contains helper scripts for managing the Kubernetes cluster.
 
 ### new-app.sh
 
-Interactive script for bootstrapping a new application deployment.
+Interactive script for bootstrapping a new application deployment with support for multiple chart types.
 
 **Usage:**
 
@@ -17,20 +17,30 @@ Interactive script for bootstrapping a new application deployment.
 **Features:**
 
 - 🎯 Interactive prompts for all configuration options
+- 📦 **Multiple deployment types:**
+  - **App Template (bjw-s)** - Custom applications with full configuration
+  - **PostgreSQL** - Bitnami PostgreSQL with automatic config
+  - **Redis** - Bitnami Redis (standalone/replication)
+  - **MariaDB/MySQL** - Bitnami MariaDB database
+  - **MongoDB** - Bitnami MongoDB database
+  - **Custom OCI Chart** - Specify any OCI registry chart
+  - **Custom Helm Repo** - Specify any Helm repository chart
 - 📁 Automatic directory structure creation
 - 📝 Generates all required YAML files:
   - Flux Kustomization (`ks.yaml`)
-  - OCIRepository configuration
-  - HelmRelease with best practices
-  - ExternalSecret (optional)
+  - OCIRepository or HelmRepository configuration
+  - HelmRelease with chart-specific values
+  - ExternalSecret with multiple secret keys (optional)
   - Kustomization manifest
 - 🔧 Configurable options:
   - External/internal ingress with automatic TLS
-  - Secrets from 1Password
+  - Multiple secrets from 1Password
   - Persistent storage (PVC)
   - Custom ports and health checks
+  - Prometheus metrics (for databases)
+  - Architecture selection (Redis)
 - ✅ Automatically updates namespace kustomization
-- 📋 Provides next-steps checklist
+- 📋 Provides next-steps checklist with connection info
 
 **Example Session:**
 
