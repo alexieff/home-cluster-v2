@@ -48,16 +48,14 @@ spec:
               timeInterval: 30s
               httpMethod: POST
             editable: false
-
-          # VictoriaLogs datasource commented out until plugin is available
-          # - name: VictoriaLogs
-          #   type: victorialogs-datasource
-          #   uid: victorialogs
-          #   access: proxy
-          #   url: http://victoria-logs-victoria-logs-single-server:9428/select/logsql/query
-          #   jsonData:
-          #     httpMethod: POST
-          #   editable: false
+          - name: VictoriaLogs
+            type: victorialogs-datasource
+            uid: victorialogs
+            access: proxy
+            url: http://victoria-logs-victoria-logs-single-server:9428/select/logsql/query
+            jsonData:
+              httpMethod: POST
+            editable: false
 
     dashboardProviders:
       dashboardproviders.yaml:
