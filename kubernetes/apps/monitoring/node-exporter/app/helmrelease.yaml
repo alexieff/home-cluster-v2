@@ -4,10 +4,13 @@ kind: HelmRelease
 metadata:
   name: &app node-exporter
 spec:
-  chartRef:
-    kind: OCIRepository
-    name: prometheus-community
-  chart: prometheus-node-exporter
+  chart:
+    spec:
+      chart: prometheus-node-exporter
+      version: 4.x
+      sourceRef:
+        kind: OCIRepository
+        name: prometheus-community
   interval: 1h
   values:
     fullnameOverride: *app
