@@ -16,9 +16,9 @@ spec:
     fullnameOverride: *app
 
     # Prometheus annotations for VictoriaMetrics discovery
-    podAnnotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "8080"
+    #podAnnotations:
+    #  prometheus.io/scrape: "true"
+    #  prometheus.io/port: "8080"
 
     service:
       type: ClusterIP
