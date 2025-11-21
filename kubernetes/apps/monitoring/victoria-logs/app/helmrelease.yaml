@@ -20,7 +20,7 @@ spec:
         enabled: true
         storageClass: longhorn
         size: 512Gi
-      retentionPeriod: "7d"
+      retentionPeriod: "30d"
       service:
         servicePort: 9428
         type: ClusterIP
