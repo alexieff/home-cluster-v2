@@ -42,7 +42,7 @@ spec:
             type: prometheus
             uid: victoriametrics
             access: proxy
-            url: http://victoria-metrics-server:8428
+            url: http://victoria-metrics-victoria-metrics-single-server:8428
             isDefault: true
             jsonData:
               timeInterval: 30s
@@ -54,7 +54,7 @@ spec:
           #   type: victorialogs-datasource
           #   uid: victorialogs
           #   access: proxy
-          #   url: http://victoria-logs-server:9428/select/logsql/query
+          #   url: http://victoria-logs-victoria-logs-single-server:9428/select/logsql/query
           #   jsonData:
           #     httpMethod: POST
           #   editable: false
