@@ -12,11 +12,11 @@ rules:
       - helmrepositories
       - helmcharts
       - buckets
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
   - apiGroups: ["infra.contrib.fluxcd.io"]
     resources:
       - terraforms
-    verbs: ["get", "list", "watch"]    
+    verbs: ["get", "list", "watch", "kind"]    
   - apiGroups: ["kustomize.toolkit.fluxcd.io"]
     resources:
       - kustomizations
@@ -30,13 +30,13 @@ rules:
       - alerts
       - providers
       - receivers
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
   - apiGroups: ["image.toolkit.fluxcd.io"]
     resources:
       - imagerepositories
       - imagepolicies
       - imageupdateautomations
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
   # Core Kubernetes resources
   - apiGroups: [""]
     resources:
@@ -44,15 +44,15 @@ rules:
       - events
       - pods
       - services
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
   - apiGroups: ["apps"]
     resources:
       - deployments
       - daemonsets
       - statefulsets
       - replicasets
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
   - apiGroups: ["networking.k8s.io"]
     resources:
       - ingresses
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
