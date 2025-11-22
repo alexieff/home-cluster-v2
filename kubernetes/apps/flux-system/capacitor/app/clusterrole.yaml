@@ -24,7 +24,7 @@ rules:
   - apiGroups: ["helm.toolkit.fluxcd.io"]
     resources:
       - helmreleases
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "spec"]
   - apiGroups: ["notification.toolkit.fluxcd.io"]
     resources:
       - alerts
