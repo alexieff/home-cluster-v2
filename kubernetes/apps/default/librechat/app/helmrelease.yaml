@@ -63,7 +63,9 @@ spec:
     mongodb:
       enabled: true
       image:
-        tag: "8.0.16"  # Use stable tag instead of specific version
+        registry: public.ecr.aws
+        repository: bitnami/mongodb
+        tag: "8.0.12"
       auth:
         rootPassword: "" # Will be auto-generated
         username: librechat
