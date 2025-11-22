@@ -20,7 +20,7 @@ rules:
   - apiGroups: ["kustomize.toolkit.fluxcd.io"]
     resources:
       - kustomizations
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "kind"]
   - apiGroups: ["helm.toolkit.fluxcd.io"]
     resources:
       - helmreleases
