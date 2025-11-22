@@ -58,6 +58,26 @@ After deployment, LibreChat will be available at:
 ### Adding AI Providers
 Add your API keys to the 1Password `librechat` item, then Flux will automatically sync them.
 
+### Custom API URLs
+
+The deployment includes example custom endpoint configurations in `helmrelease.yaml`. To use custom API URLs:
+
+1. **Edit the `configYamlContent` section** in `helmrelease.yaml`
+2. **Replace the example URLs** with your actual API endpoints:
+   - `baseURL: "https://your-openai-proxy.com/v1"` - Your OpenAI-compatible endpoint
+   - `baseURL: "https://your-anthropic-proxy.com"` - Your Anthropic proxy
+   - `baseURL: "http://ollama.local:11434/v1"` - Local LLM endpoint
+
+3. **Remove unused endpoints** or add more as needed
+
+Example use cases:
+- **Reverse proxies** for API caching/monitoring
+- **Local LLMs** via Ollama, LM Studio, or vLLM
+- **Alternative providers** like OpenRouter, Together.ai
+- **Self-hosted models** with OpenAI-compatible APIs
+
+Environment variables like `${OPENAI_API_KEY}` reference secrets from the ExternalSecret.
+
 ## Resources
 
 - CPU Request: 200m (app), 100m (mongodb), 50m (meilisearch)

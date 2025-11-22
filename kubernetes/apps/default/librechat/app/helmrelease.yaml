@@ -23,6 +23,47 @@ spec:
       allowRegistration: true
       allowSocialLogin: false
 
+    # Custom librechat.yaml configuration
+    configYamlContent: |
+      version: 1.1.7
+      cache: true
+
+      # Custom endpoints for alternative API URLs
+      endpoints:
+        custom:
+          # Example: Custom OpenAI-compatible endpoint
+          - name: "Custom OpenAI"
+            apiKey: "${OPENAI_API_KEY}"
+            baseURL: "https://your-openai-proxy.com/v1"
+            models:
+              default: ["gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"]
+            titleConvo: true
+            titleModel: "gpt-3.5-turbo"
+            summarize: false
+            summaryModel: "gpt-3.5-turbo"
+            forcePrompt: false
+            modelDisplayLabel: "Custom OpenAI"
+
+          # Example: Custom Anthropic endpoint
+          - name: "Custom Anthropic"
+            apiKey: "${ANTHROPIC_API_KEY}"
+            baseURL: "https://your-anthropic-proxy.com"
+            models:
+              default: ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"]
+            titleConvo: true
+            titleModel: "claude-3-5-haiku-20241022"
+            modelDisplayLabel: "Custom Claude"
+
+          # Example: Local Ollama or other OpenAI-compatible
+          - name: "Local LLM"
+            apiKey: "not-needed"
+            baseURL: "http://ollama.local:11434/v1"
+            models:
+              default: ["llama3.2", "mistral"]
+            titleConvo: true
+            titleModel: "llama3.2"
+            modelDisplayLabel: "Local"
+
     # Use secrets from ExternalSecret
     existingSecret: librechat-secrets
 
