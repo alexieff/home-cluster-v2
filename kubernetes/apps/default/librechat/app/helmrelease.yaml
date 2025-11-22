@@ -57,7 +57,7 @@ spec:
             modelDisplayLabel: "Custom Claude"
 
     # Use secrets from ExternalSecret
-    existingSecret: librechat-secrets
+    existingSecret: librechat-credentials-env
 
     # MongoDB configuration
     mongodb:

@@ -6,6 +6,6 @@ metadata:
   namespace: default
 spec:
   interval: 12h
-  url: oci://ghcr.io/danny-avila/librechat-chart
+  url: oci://ghcr.io/danny-avila/librechat-chart/librechat
   ref:
     semver: "*"
