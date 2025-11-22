@@ -32,11 +32,12 @@ spec:
       endpoints:
         custom:
           # Example: Custom OpenAI-compatible endpoint
-          - name: "Custom OpenAI"
+          - name: "LiteLLM OpenAI"
             apiKey: "${OPENAI_API_KEY}"
-            baseURL: "https://your-openai-proxy.com/v1"
+            baseURL: "https://https://litellm.lan.haxrcorp.com//v1"
             models:
               default: ["gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"]
+              fetch: true
             titleConvo: true
             titleModel: "gpt-3.5-turbo"
             summarize: false
@@ -45,24 +46,15 @@ spec:
             modelDisplayLabel: "Custom OpenAI"
 
           # Example: Custom Anthropic endpoint
-          - name: "Custom Anthropic"
+          - name: "LiteLLM Anthropic"
             apiKey: "${ANTHROPIC_API_KEY}"
-            baseURL: "https://your-anthropic-proxy.com"
+            baseURL: "https://https://litellm.lan.haxrcorp.com/"
             models:
               default: ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"]
+              fetch: true
             titleConvo: true
             titleModel: "claude-3-5-haiku-20241022"
             modelDisplayLabel: "Custom Claude"
-
-          # Example: Local Ollama or other OpenAI-compatible
-          - name: "Local LLM"
-            apiKey: "not-needed"
-            baseURL: "http://ollama.local:11434/v1"
-            models:
-              default: ["llama3.2", "mistral"]
-            titleConvo: true
-            titleModel: "llama3.2"
-            modelDisplayLabel: "Local"
 
     # Use secrets from ExternalSecret
     existingSecret: librechat-secrets
