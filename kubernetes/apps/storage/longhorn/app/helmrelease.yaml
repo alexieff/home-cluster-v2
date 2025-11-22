@@ -75,7 +75,7 @@ spec:
       snapshotDataIntegrity: disabled
       snapshotDataIntegrityImmediateCheckAfterSnapshotCreation: false
       snapshotDataIntegrityCronjob: "0 0 */7 * *"
-      removeSnapshotsDuringFilesystemTrim: enabled
+      removeSnapshotsDuringFilesystemTrim: true
       fastReplicaRebuildEnabled: false
       replicaFileSyncHttpClientTimeout: 30
 
