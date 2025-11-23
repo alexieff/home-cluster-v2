@@ -8,3 +8,4 @@ components:
 
 resources:
   - ./namespace.yaml
+  - ./librechat/ks.yaml
