@@ -54,7 +54,7 @@ spec:
 
       # Enable registration (set to false in production after first user)
       allowEmailLogin: true
-      allowRegistration: true
+      allowRegistration: false
       allowSocialLogin: false
 
     # Custom librechat.yaml configuration
@@ -80,15 +80,15 @@ spec:
             modelDisplayLabel: "Custom OpenAI"
 
           # Example: Custom Anthropic endpoint
-          - name: "LiteLLM Anthropic"
-            apiKey: "${ANTHROPIC_API_KEY}"
-            baseURL: "https://litellm.lan.haxrcorp.com"
-            models:
-              default: ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"]
-              fetch: true
-            titleConvo: true
-            titleModel: "claude-3-5-haiku-20241022"
-            modelDisplayLabel: "Custom Claude"
+          #- name: "LiteLLM Anthropic"
+          #  apiKey: "${ANTHROPIC_API_KEY}"
+          #  baseURL: "https://litellm.lan.haxrcorp.com"
+          #  models:
+          #    default: ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"]
+          #    fetch: true
+          #  titleConvo: true
+          #  titleModel: "claude-3-5-haiku-20241022"
+          #  modelDisplayLabel: "Custom Claude"
 
     # Config file is mounted via Kustomize patch (see deployment-patch.yaml)
     # The chart doesn't support extraVolumes/extraVolumeMounts
