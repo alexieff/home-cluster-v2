@@ -12,5 +12,5 @@ spec:
       sectionName: https
   rules:
     - backendRefs:
-        - name: librechat
+        - name: librechat-librechat
           port: 3080
