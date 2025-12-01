@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: librechat-librechat
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - name: librechat-librechat
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/librechat.yaml
+              subPath: librechat.yaml
+              readOnly: true
+      volumes:
+        - name: config-volume
+          configMap:
+            name: librechat-config

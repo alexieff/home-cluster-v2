@@ -56,17 +56,8 @@ spec:
             titleModel: "claude-3-5-haiku-20241022"
             modelDisplayLabel: "Custom Claude"
 
-    # Mount the config file manually since the chart doesn't support configYamlContent properly
-    extraVolumes:
-      - name: config-volume
-        configMap:
-          name: librechat-config
-
-    extraVolumeMounts:
-      - name: config-volume
-        mountPath: /app/librechat.yaml
-        subPath: librechat.yaml
-        readOnly: true
+    # Config file is mounted via Kustomize patch (see deployment-patch.yaml)
+    # The chart doesn't support extraVolumes/extraVolumeMounts
 
     # Use secrets from ExternalSecret
     existingSecret: librechat-credentials-env
