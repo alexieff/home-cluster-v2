@@ -33,7 +33,7 @@ spec:
                           - name: ALLOW_EMAIL_LOGIN
                             value: "true"
                           - name: ALLOW_REGISTRATION
-                            value: "true"
+                            value: "false"
                           - name: ALLOW_SOCIAL_LOGIN
                             value: "false"
                         volumeMounts:
