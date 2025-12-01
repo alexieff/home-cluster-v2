@@ -17,22 +17,22 @@ data:
           apiKey: "${OPENAI_API_KEY}"
           baseURL: "https://litellm.lan.haxrcorp.com/v1"
           models:
-            default: ["gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"]
+            default: ["gpt-5"]
             fetch: true
           titleConvo: true
-          titleModel: "gpt-3.5-turbo"
+          titleModel: "gpt-5"
           summarize: false
-          summaryModel: "gpt-3.5-turbo"
+          summaryModel: "gpt-5"
           forcePrompt: false
-          modelDisplayLabel: "Custom OpenAI"
+          modelDisplayLabel: "LiteLLM"
 
         # Example: Custom Anthropic endpoint
-        - name: "LiteLLM Anthropic"
-          apiKey: "${ANTHROPIC_API_KEY}"
-          baseURL: "https://litellm.lan.haxrcorp.com"
-          models:
-            default: ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"]
-            fetch: true
-          titleConvo: true
-          titleModel: "claude-3-5-haiku-20241022"
-          modelDisplayLabel: "Custom Claude"
+        #- name: "LiteLLM Anthropic"
+        #  apiKey: "${ANTHROPIC_API_KEY}"
+        #  baseURL: "https://litellm.lan.haxrcorp.com"
+        #  models:
+        #    default: ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"]
+        #    fetch: true
+        #  titleConvo: true
+        #  titleModel: "claude-3-5-haiku-20241022"
+        #  modelDisplayLabel: "Custom Claude"
