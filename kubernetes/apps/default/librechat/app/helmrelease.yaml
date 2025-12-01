@@ -18,39 +18,33 @@ spec:
               kind: Deployment
               name: librechat-librechat
             patch: |
-              - op: add
-                path: /spec/template/spec/volumes/-
-                value:
-                  name: config-volume
-                  configMap:
-                    name: librechat-config
-              - op: add
-                path: /spec/template/spec/containers/0/volumeMounts/-
-                value:
-                  name: config-volume
-                  mountPath: /app/librechat.yaml
-                  subPath: librechat.yaml
-                  readOnly: true
-              - op: add
-                path: /spec/template/spec/containers/0/env/-
-                value:
-                  name: APP_TITLE
-                  value: "LibreChat"
-              - op: add
-                path: /spec/template/spec/containers/0/env/-
-                value:
-                  name: ALLOW_EMAIL_LOGIN
-                  value: "true"
-              - op: add
-                path: /spec/template/spec/containers/0/env/-
-                value:
-                  name: ALLOW_REGISTRATION
-                  value: "true"
-              - op: add
-                path: /spec/template/spec/containers/0/env/-
-                value:
-                  name: ALLOW_SOCIAL_LOGIN
-                  value: "false"
+              apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: librechat-librechat
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: librechat-librechat
+                        env:
+                          - name: APP_TITLE
+                            value: "LibreChat"
+                          - name: ALLOW_EMAIL_LOGIN
+                            value: "true"
+                          - name: ALLOW_REGISTRATION
+                            value: "true"
+                          - name: ALLOW_SOCIAL_LOGIN
+                            value: "false"
+                        volumeMounts:
+                          - name: config-volume
+                            mountPath: /app/librechat.yaml
+                            subPath: librechat.yaml
+                            readOnly: true
+                    volumes:
+                      - name: config-volume
+                        configMap:
+                          name: librechat-config
   values:
     # LibreChat configuration
     config:
