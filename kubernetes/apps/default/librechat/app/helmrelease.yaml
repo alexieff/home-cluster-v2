@@ -11,6 +11,26 @@ spec:
     namespace: default
   interval: 1h
   timeout: 15m
+  postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              kind: Deployment
+              name: librechat-librechat
+            patch: |
+              - op: add
+                path: /spec/template/spec/volumes/-
+                value:
+                  name: config-volume
+                  configMap:
+                    name: librechat-config
+              - op: add
+                path: /spec/template/spec/containers/0/volumeMounts/-
+                value:
+                  name: config-volume
+                  mountPath: /app/librechat.yaml
+                  subPath: librechat.yaml
+                  readOnly: true
   values:
     # LibreChat configuration
     config:

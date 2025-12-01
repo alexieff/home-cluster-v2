@@ -7,9 +7,3 @@ resources:
   - ./configmap.yaml
   - ./helmrelease.yaml
   - ./httproute.yaml
-
-patches:
-  - path: deployment-patch.yaml
-    target:
-      kind: Deployment
-      name: librechat-librechat
