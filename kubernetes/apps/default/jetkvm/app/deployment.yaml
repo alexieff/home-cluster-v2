@@ -64,7 +64,7 @@ spec:
               protocol: TCP
           envFrom:
             - secretRef:
-                name: jetkvm-cloud-api-env
+                name: jetkvm-cloud-api
           livenessProbe:
             httpGet:
               path: /
