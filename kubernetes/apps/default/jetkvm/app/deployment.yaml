@@ -29,7 +29,7 @@ spec:
       # Init container to run Prisma migrations
       initContainers:
         - name: prisma-migrate
-          image: ghcr.io/jetkvm/cloud-api:latest
+          image: ghcr.io/alexieff/cloud-api:latest
           command:
             - sh
             - -c
