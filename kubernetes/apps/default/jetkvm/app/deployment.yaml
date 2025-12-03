@@ -39,7 +39,7 @@ spec:
               echo "Migrations completed successfully"
           envFrom:
             - secretRef:
-                name: jetkvm-cloud-api-env
+                name: jetkvm-cloud-api
           resources:
             requests:
               cpu: 100m
