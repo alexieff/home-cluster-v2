@@ -12,6 +12,12 @@ spec:
         kind: HelmRepository
         name: victoria-metrics
   interval: 1h
+  install:
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  upgrade:
+    crds: CreateReplace
   values:
     # Operator configuration
     operator:
@@ -40,8 +46,9 @@ spec:
       fsGroup: 65534
 
     # Service monitor for the operator itself
+    # Disabled initially to avoid CRD issues
     serviceMonitor:
-      enabled: true
+      enabled: false
 
     # Admission webhooks
     admissionWebhooks:
