@@ -12,5 +12,5 @@ spec:
       sectionName: https
   rules:
     - backendRefs:
-        - name: victoria-metrics-victoria-metrics-single-server
-          port: 8428
+        - name: vmsingle-vmsingle
+          port: 8429

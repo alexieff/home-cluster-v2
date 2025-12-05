@@ -42,7 +42,7 @@ spec:
             type: prometheus
             uid: victoriametrics
             access: proxy
-            url: http://victoria-metrics-victoria-metrics-single-server:8428
+            url: http://vmsingle-vmsingle:8429
             isDefault: true
             jsonData:
               timeInterval: 30s

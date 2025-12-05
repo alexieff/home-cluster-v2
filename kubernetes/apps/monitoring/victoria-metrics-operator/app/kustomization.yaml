@@ -5,5 +5,4 @@ namespace: monitoring
 resources:
   - ./helmrepository.yaml
   - ./helmrelease.yaml
-  # VMSingle will be added after operator installs CRDs
-  # - ./vmsingle.yaml
+  - ./vmsingle.yaml
